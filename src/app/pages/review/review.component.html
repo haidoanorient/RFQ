@@ -1,0 +1,60 @@
+<div *ngIf="applicant">
+
+    <a class="nav-link text-dark" [routerLink]='["/agent"]'>Back to list</a>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <h2>Applicant Review: {{applicant.applicantId}}</h2>
+        </div>
+        <div class="col-8">
+            <button (click)="accept(applicant.id)" type="button" class="btn btn-success">Accept</button>|
+            <button (click)="refuse(applicant.id)" type="button" class="btn btn-danger">Refuse</button>
+        </div>
+    </div>
+    <div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">Applicant Name: </div>
+                    <div class="col-9">{{applicant.fullName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant Address: </div>
+                    <div class="col-9">{{applicant.address}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant Phone Number: </div>
+                    <div class="col-9">{{applicant.phoneNumber}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant Description: </div>
+                    <div class="col-9">{{applicant.description}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant Status: </div>
+                    <div class="col-9">{{applicantStatusDisplay[applicant.status]}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant dateOfBirth: </div>
+                    <div class="col-9">{{applicant.dateOfBirth}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant CreateDate: </div>
+                    <div class="col-9">{{applicant.createdDate}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-3">Applicant updatedDate: </div>
+                    <div class="col-9">{{applicant.updatedDate}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Content</h2>
+    <hr>
+    <h2>PDF Viewer</h2>
+
+    <!-- <div class="pdf-container">
+    <pdf-viewer [src]="contentUri" [original-size]="false"></pdf-viewer>
+</div> -->
+
+</div>

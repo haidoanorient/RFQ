@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": "dist",
+    "appService.defaultWebAppToDeploy": "/subscriptions/5e5d0856-c786-4e77-b8f0-281259e01622/resourceGroups/POC/providers/Microsoft.Web/sites/rfqsite"
+}

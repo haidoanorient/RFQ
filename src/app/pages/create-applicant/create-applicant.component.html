@@ -1,0 +1,16 @@
+<h2>
+    New Applicant
+</h2>
+<div class="col-6">
+    <div class="form-group">
+        <label for="email">FullName</label>
+        <input [(ngModel)]="applicantRequest.fullName" class="form-control" type="email" id="email">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input [(ngModel)]="applicantRequest.email" type="email" (ngModelChange)="emailInputChange()" class="form-control" id="email">
+    </div>
+
+    <button [disabled]="canSubmit" (click)='onSubmit()' type="submit" class="btn btn-primary">Submit</button>
+</div>

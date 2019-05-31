@@ -1,0 +1,60 @@
+<div *ngIf="submitted">
+    Submitted successfully!
+</div>
+
+<div class="container">
+    <div *ngIf="applicant" class="col-5" [hidden]="submitted">
+        <h1>Applicant Form</h1>
+        <form #applicantForm="ngForm">
+
+            <div class="form-group">
+                <label for="applicantName">Email</label>
+                <input type="text" class="form-control" id="applicantName" required [(ngModel)]="applicant.email" name="email" #name="ngModel">
+                <!-- <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+                            Name is required
+                        </div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="applicantName">Name</label>
+                <input type="text" class="form-control" id="applicantName" required [(ngModel)]="applicant.fullName" name="applicantName" #name="ngModel">
+                <!-- <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+                    Name is required
+                </div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="userName">Address</label>
+                <input type="text" class="form-control" id="address" required [(ngModel)]="applicant.address" name="address" #name="ngModel">
+                <!-- <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+                        Name is required
+                    </div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="userName">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="applicant.phoneNumber" name="phoneNumber" #name="ngModel">
+                <!-- <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+                            Name is required
+                        </div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" required [(ngModel)]="applicant.description" name="description" #name="ngModel">
+                <!-- <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+                                Name is required
+                            </div> -->
+            </div>
+
+            <div class="form-group">
+                <label>Attach file</label>
+                <input (change)="fileChange($event)" type="file" class="form-control-file" accept=".pdf">
+            </div>
+
+            <button (click)="onSubmit()" class="btn btn-success" [disabled]="!applicantForm.form.valid">Submit</button>
+            <!-- <button type="button" class="btn btn-default" (click)="newHero(); applicantForm.reset()">New Hero</button> -->
+        </form>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
